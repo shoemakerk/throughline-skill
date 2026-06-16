@@ -140,8 +140,10 @@ function makeText(opts) {
   t.fontSize = opts.size || 13
   t.fills = opts.color || COLORS.dark
   if (opts.width) {
+    t.textAutoResize = 'WIDTH_AND_HEIGHT'
+    t.characters = opts.characters || ""
+    t.resize(opts.width, t.height)
     t.textAutoResize = 'HEIGHT'
-    t.resize(opts.width, 20)
   } else {
     t.textAutoResize = 'WIDTH_AND_HEIGHT'
   }
