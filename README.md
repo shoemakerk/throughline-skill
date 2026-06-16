@@ -68,7 +68,7 @@ The Director's Brief connects directly to Figma Weave. Paste the prompt into a W
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/[your-username]/throughline-skill.git
+git clone https://github.com/shoemakerk/throughline-skill.git
 ```
 
 2. Add the skill to your Figma Agent configuration. In your MCP settings, add the path to `SKILL.md`:
@@ -77,6 +77,8 @@ git clone https://github.com/[your-username]/throughline-skill.git
 {
   "skills": [
     "/path/to/throughline-skill/SKILL.md"
+    // or use the raw GitHub URL:
+    // "https://raw.githubusercontent.com/shoemakerk/throughline-skill/main/SKILL.md"
   ]
 }
 ```
