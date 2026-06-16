@@ -134,6 +134,12 @@ The template includes:
 - Throughline Skill block in the sidebar
 - Read Me panel with workflow loop documentation
 
+The sidebar includes three locked reference sections:
+
+- Reference Key — all pill values defined with visual examples
+- Writing Tips — field-by-field prompt writing guidance for Shot Intent, Action/Staging, Dialogue/VO, Audio/SFX, Visual Continuity, and AI Model Used
+- Glossary — 10 cinematography terms defined in plain language: 180 Rule, Screen Direction, Shot Type, Camera Movement, Beat, Scene Tone, Visual Continuity, Golden Hour, Transition Type, and Throughline
+
 ---
 
 ## Built by
@@ -145,3 +151,22 @@ Built and demonstrated by Kelly Shoemaker at Config Makeathon 2026.
 ## License
 
 MIT. Use freely, build on it, share what you make.
+
+---
+
+## Roadmap
+
+**Multi-prompt Director's Brief**
+The current Director's Brief generates one Weave prompt targeting the highest-priority shot. The next version will scan all CONCEPT-status shot cards, generate a targeted Weave prompt for each missing shot using adjacent generated images as style references, and present them as a numbered prompt stack — so designers can move through the storyboard systematically without writing a single prompt from scratch.
+
+**Screen direction and 180 Rule diagrams**
+Spatial principle findings (180 Rule, Visual Pacing) will include SVG diagram annotations showing screen direction across cuts — making spatial violations immediately visible rather than described in text.
+
+**Scene-level evaluation**
+Throughline currently evaluates shots individually and across the full storyboard. Scene-level evaluation will target all shots within a single scene header, enabling more precise findings about spatial continuity and emotional arc within a single location and time period.
+
+**UX domain visual findings**
+Findings for Fitts Law, Gestalt, and other spatial UX principles will include thumbnail annotations pulled from the actual design frames — showing the problem visually rather than describing it in text.
+
+**Throughline App**
+A Figma Make interface that wraps the full skill workflow. Designers fill in shot cards, run Throughline, and receive critique without touching the Agents panel. Includes drag-to-reorder shots, live Weave Brief preview, multi-prompt generation for all CONCEPT shots, and PDF export.
