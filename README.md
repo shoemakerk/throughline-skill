@@ -5,7 +5,7 @@
 Throughline evaluates any section of any Figma file against established design principles, then writes a structured critique frame directly to your canvas, including color-coded findings and a ready-to-use Figma Weave Brief.
 
 > Most storyboard and design tools help you capture what you're making.
-> Throughline helps you evaluate whether it works, before you generate.
+> Throughline helps you evaluate whether it works, before you spend a single generation credit.
 
 Built for the [Config Makeathon 2026](https://config.figma.com/makeathon). Figma Design only.
 
@@ -15,30 +15,30 @@ Built for the [Config Makeathon 2026](https://config.figma.com/makeathon). Figma
 
 Invoke `/throughline` in the Figma Agents panel. Throughline will:
 
-1. **Map your file** — reads the page structure, surfaces named sections and frames
-2. **Ask what to review** — you select sections or frames to evaluate
-3. **Analyze against principles** — evaluates against 15 Story/Cinematography principles or 15 UX Laws
-4. **Write to canvas** — places a structured Throughline Critique Frame to the right of your content
+1. **Map your file**, reads the page structure, surfaces named sections and frames
+2. **Ask what to review**, you select sections or frames to evaluate
+3. **Analyze against principles**, evaluates against 15 UX Laws or 15 Story/Cinematography principles
+4. **Write to canvas**, places a structured Throughline Critique Frame to the right of your content
 
 The critique frame includes:
 
-- **Color-coded findings** — Working Well, Worth Considering, Review
-- **Director's Brief** — a ready-to-use Figma Weave generation prompt targeting your weakest area
-- **What to Do Next** — three specific, actionable follow-up steps
-- **Workflow Loop strip** — showing where you are in the creative loop
-- **Director's Cut** — an empty field for you to write your own intent statement
+- **Color-coded findings**, Working Well, Worth Considering, Review
+- **Director's Brief**, a ready-to-use Figma Weave generation prompt targeting your weakest area
+- **What to Do Next**, three specific, actionable follow-up steps
+- **Workflow Loop strip**, showing where you are in the creative loop
+- **Director's Cut**, an empty field for you to write your own intent statement
 
 ---
 
 ## Two domains
 
-### Story Domain (`/throughline story`)
-
-Evaluates storyboards, shot sequences, and GenAI film production against cinematography and narrative principles: Show Don't Tell, 180 Rule, Visual Pacing, Three-Act Structure, Contrast and Tension, Character Consistency, Environmental Storytelling, Chekhov's Gun, Economy of Storytelling, and more.
-
 ### UX Domain (`/throughline ux`)
 
 Evaluates UI designs against the [Laws of UX](https://lawsofux.com). 15 principles covering Fitts's Law, Hick's Law, Miller's Law, Gestalt, Von Restorff, Peak-End Rule, and more.
+
+### Story Domain (`/throughline story`)
+
+Evaluates storyboards, shot sequences, and GenAI film production against cinematography and narrative principles: Show Don't Tell, 180 Rule, Visual Pacing, Three-Act Structure, Contrast and Tension, Character Consistency, Environmental Storytelling, Chekhov's Gun, Economy of Storytelling, and more.
 
 The Story domain is optimized for use with the Throughline Storyboard Template. The UX domain evaluates any UI design file.
 
@@ -88,9 +88,9 @@ Add `SKILL.md` and `guidelines.md` to your client's skills or context directory.
 
 Throughline uses the following Figma MCP tools:
 
-- `use_figma` — writes the critique frame directly to canvas
-- `get_screenshot` — captures sections for visual analysis
-- `get_design_context` — reads frame structure and metadata
+- `use_figma`, writes the critique frame directly to canvas
+- `get_screenshot`, captures sections for visual analysis
+- `get_design_context`, reads frame structure and metadata
 
 ---
 
@@ -98,7 +98,7 @@ Throughline uses the following Figma MCP tools:
 
 | File | Purpose |
 |---|---|
-| `SKILL.md` | Agent-facing skill descriptor. Install this first |
+| `SKILL.md` | Agent-facing skill descriptor. Install this first. |
 | `guidelines.md` | Always-on ambient project memory |
 | `throughline-discover.js` | Phase 1: maps page structure, excludes hidden nodes |
 | `throughline-scope.js` | Phase 1b: resolves section IDs to coordinates |
@@ -139,9 +139,9 @@ The template includes:
 
 The sidebar includes three locked reference sections:
 
-- Reference Key — all pill values defined with visual examples
-- Writing Tips — field-by-field prompt writing guidance for Shot Intent, Action/Staging, Dialogue/VO, Audio/SFX, Visual Continuity, and AI Model Used
-- Glossary — 10 cinematography terms defined in plain language: 180 Rule, Screen Direction, Shot Type, Camera Movement, Beat, Scene Tone, Visual Continuity, Golden Hour, Transition Type, and Throughline
+- Reference Key, all pill values defined with visual examples
+- Writing Tips, field-by-field prompt writing guidance for Shot Intent, Action/Staging, Dialogue/VO, Audio/SFX, Visual Continuity, and AI Model Used
+- Glossary, 10 cinematography terms defined in plain language: 180 Rule, Screen Direction, Shot Type, Camera Movement, Beat, Scene Tone, Visual Continuity, Golden Hour, Transition Type, and Throughline
 
 Community file coming soon.
 
