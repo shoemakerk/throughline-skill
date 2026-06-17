@@ -32,13 +32,13 @@ The critique frame includes:
 
 ## Two domains
 
-### UX Domain (`/throughline ux`)
-
-Evaluates UI designs against the [Laws of UX](https://lawsofux.com). 15 principles covering Fitts's Law, Hick's Law, Miller's Law, Gestalt, Von Restorff, Peak-End Rule, and more.
-
 ### Story Domain (`/throughline story`)
 
 Evaluates storyboards, shot sequences, and GenAI film production against cinematography and narrative principles: Show Don't Tell, 180 Rule, Visual Pacing, Three-Act Structure, Contrast and Tension, Character Consistency, Environmental Storytelling, Chekhov's Gun, Economy of Storytelling, and more.
+
+### UX Domain (`/throughline ux`)
+
+Evaluates UI designs against the [Laws of UX](https://lawsofux.com). 15 principles covering Fitts's Law, Hick's Law, Miller's Law, Gestalt, Von Restorff, Peak-End Rule, and more.
 
 ---
 
