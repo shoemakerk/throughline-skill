@@ -5,7 +5,7 @@
 Throughline evaluates any section of any Figma file against established design principles, then writes a structured critique frame directly to your canvas, including color-coded findings and a ready-to-use Figma Weave Brief.
 
 > Most storyboard and design tools help you capture what you're making.
-> Throughline helps you evaluate whether it works, before you spend a single generation credit.
+> Throughline helps you evaluate whether it works, before you generate.
 
 Built for the [Config Makeathon 2026](https://config.figma.com/makeathon). Figma Design only.
 
@@ -17,7 +17,7 @@ Invoke `/throughline` in the Figma Agents panel. Throughline will:
 
 1. **Map your file** — reads the page structure, surfaces named sections and frames
 2. **Ask what to review** — you select sections or frames to evaluate
-3. **Analyze against principles** — evaluates against 15 UX Laws or 15 Story/Cinematography principles
+3. **Analyze against principles** — evaluates against 15 Story/Cinematography principles or 15 UX Laws
 4. **Write to canvas** — places a structured Throughline Critique Frame to the right of your content
 
 The critique frame includes:
@@ -32,13 +32,13 @@ The critique frame includes:
 
 ## Two domains
 
-### UX Domain (`/throughline ux`)
-
-Evaluates UI designs against the [Laws of UX](https://lawsofux.com). 15 principles covering Fitts's Law, Hick's Law, Miller's Law, Gestalt, Von Restorff, Peak-End Rule, and more.
-
 ### Story Domain (`/throughline story`)
 
 Evaluates storyboards, shot sequences, and GenAI film production against cinematography and narrative principles: Show Don't Tell, 180 Rule, Visual Pacing, Three-Act Structure, Contrast and Tension, Character Consistency, Environmental Storytelling, Chekhov's Gun, Economy of Storytelling, and more.
+
+### UX Domain (`/throughline ux`)
+
+Evaluates UI designs against the [Laws of UX](https://lawsofux.com). 15 principles covering Fitts's Law, Hick's Law, Miller's Law, Gestalt, Von Restorff, Peak-End Rule, and more.
 
 The Story domain is optimized for use with the Throughline Storyboard Template. The UX domain evaluates any UI design file.
 
@@ -98,7 +98,7 @@ Throughline uses the following Figma MCP tools:
 
 | File | Purpose |
 |---|---|
-| `SKILL.md` | Agent-facing skill descriptor — install this |
+| `SKILL.md` | Agent-facing skill descriptor. Install this first |
 | `guidelines.md` | Always-on ambient project memory |
 | `throughline-discover.js` | Phase 1: maps page structure, excludes hidden nodes |
 | `throughline-scope.js` | Phase 1b: resolves section IDs to coordinates |
@@ -175,3 +175,6 @@ Findings for Fitts Law, Gestalt, and other spatial UX principles will include th
 
 **Throughline App**
 A Figma Make interface that wraps the full skill workflow. Designers fill in shot cards, run Throughline, and receive critique without touching the Agents panel. Includes drag-to-reorder shots, live Weave Brief preview, multi-prompt generation for all CONCEPT shots, and PDF export.
+
+**Figma Design to Weave API integration**
+Direct connection between the Director's Brief and Figma Weave, so generation is triggered from the critique frame without manual copy-paste. The prompt, model recommendation, and style reference shots would be passed automatically to Weave nodes, closing the loop between craft evaluation and image generation in a single action.
