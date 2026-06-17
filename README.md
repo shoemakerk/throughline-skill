@@ -22,23 +22,25 @@ Invoke `/throughline` in the Figma Agents panel. Throughline will:
 
 The critique frame includes:
 
-- **Color-coded findings** — Working Well · Worth Considering · Review
+- **Color-coded findings** — Working Well, Worth Considering, Review
 - **Director's Brief** — a ready-to-use Figma Weave generation prompt targeting your weakest area
 - **What to Do Next** — three specific, actionable follow-up steps
-- **Workflow Loop strip** — showing where you are in the Design, Throughline, Weave, Make cycle
+- **Workflow Loop strip** — showing where you are in the creative loop
 - **Director's Cut** — an empty field for you to write your own intent statement
 
 ---
 
 ## Two domains
 
+### UX Domain (`/throughline ux`)
+
+Evaluates UI designs against the [Laws of UX](https://lawsofux.com). 15 principles covering Fitts's Law, Hick's Law, Miller's Law, Gestalt, Von Restorff, Peak-End Rule, and more.
+
 ### Story Domain (`/throughline story`)
 
 Evaluates storyboards, shot sequences, and GenAI film production against cinematography and narrative principles: Show Don't Tell, 180 Rule, Visual Pacing, Three-Act Structure, Contrast and Tension, Character Consistency, Environmental Storytelling, Chekhov's Gun, Economy of Storytelling, and more.
 
-### UX Domain (`/throughline ux`)
-
-Evaluates UI designs against the [Laws of UX](https://lawsofux.com). 15 principles covering Fitts's Law, Hick's Law, Miller's Law, Gestalt, Von Restorff, Peak-End Rule, and more.
+The Story domain is optimized for use with the Throughline Storyboard Template. The UX domain evaluates any UI design file.
 
 ---
 
@@ -47,7 +49,7 @@ Evaluates UI designs against the [Laws of UX](https://lawsofux.com). 15 principl
 Throughline sits at two points in the creative loop:
 
 ```
-Design -> /throughline -> Weave -> Make -> Design
+Concept -> Storyboard -> /throughline -> Weave -> /throughline v2
 ```
 
 Every critique frame shows where you are in this loop and what comes next.
@@ -57,37 +59,38 @@ The Director's Brief connects directly to Figma Weave. Paste the prompt into a W
 
 ## Installation
 
+### Claude.ai (Team / Enterprise)
+
+1. Download the zip from the [Releases](https://github.com/shoemakerk/throughline-skill/releases) page
+2. Go to **Settings -> Customize -> Skills -> "+" -> Create skill**
+3. Upload the zip
+4. Open any Figma Design file and invoke from the Agents panel: `/throughline`
+
+### Claude Code
+
+```bash
+git clone https://github.com/shoemakerk/throughline-skill.git ~/.claude/skills/throughline
+```
+
+### Other MCP clients (Cursor, VS Code, etc.)
+
+Add `SKILL.md` and `guidelines.md` to your client's skills or context directory. Refer to your client's documentation for the exact location.
+
 ### Prerequisites
 
 - Figma Pro account with AI Agent access
 - Figma MCP server running locally (see [Figma MCP setup guide](https://github.com/figma/mcp-server-guide))
 - Claude Desktop or another MCP-compatible AI client
 
-### Setup
+---
 
-1. Clone this repository:
+## Figma Tools Used
 
-```bash
-git clone https://github.com/shoemakerk/throughline-skill.git
-```
+Throughline uses the following Figma MCP tools:
 
-2. Add the skill to your Figma Agent configuration. In your MCP settings, add the path to `SKILL.md`:
-
-```json
-{
-  "skills": [
-    "/path/to/throughline-skill/SKILL.md"
-    // or use the raw GitHub URL:
-    // "https://raw.githubusercontent.com/shoemakerk/throughline-skill/main/SKILL.md"
-  ]
-}
-```
-
-3. Open any Figma Design file and invoke the skill from the Agents panel:
-
-```
-/throughline
-```
+- `use_figma` — writes the critique frame directly to canvas
+- `get_screenshot` — captures sections for visual analysis
+- `get_design_context` — reads frame structure and metadata
 
 ---
 
@@ -140,6 +143,8 @@ The sidebar includes three locked reference sections:
 - Writing Tips — field-by-field prompt writing guidance for Shot Intent, Action/Staging, Dialogue/VO, Audio/SFX, Visual Continuity, and AI Model Used
 - Glossary — 10 cinematography terms defined in plain language: 180 Rule, Screen Direction, Shot Type, Camera Movement, Beat, Scene Tone, Visual Continuity, Golden Hour, Transition Type, and Throughline
 
+Community file coming soon.
+
 ---
 
 ## Built by
@@ -157,16 +162,16 @@ MIT. Use freely, build on it, share what you make.
 ## Roadmap
 
 **Multi-prompt Director's Brief**
-The current Director's Brief generates one Weave prompt targeting the highest-priority shot. The next version will scan all CONCEPT-status shot cards, generate a targeted Weave prompt for each missing shot using adjacent generated images as style references, and present them as a numbered prompt stack — so designers can move through the storyboard systematically without writing a single prompt from scratch.
+The current Director's Brief generates one Weave prompt targeting the highest-priority shot. The next version will scan all CONCEPT-status shot cards, generate a targeted Weave prompt for each missing shot using adjacent generated images as style references, and present them as a numbered prompt stack so designers can move through the storyboard systematically without writing a single prompt from scratch.
 
 **Screen direction and 180 Rule diagrams**
-Spatial principle findings (180 Rule, Visual Pacing) will include SVG diagram annotations showing screen direction across cuts — making spatial violations immediately visible rather than described in text.
+Spatial principle findings (180 Rule, Visual Pacing) will include SVG diagram annotations showing screen direction across cuts, making spatial violations immediately visible rather than described in text.
 
 **Scene-level evaluation**
 Throughline currently evaluates shots individually and across the full storyboard. Scene-level evaluation will target all shots within a single scene header, enabling more precise findings about spatial continuity and emotional arc within a single location and time period.
 
 **UX domain visual findings**
-Findings for Fitts Law, Gestalt, and other spatial UX principles will include thumbnail annotations pulled from the actual design frames — showing the problem visually rather than describing it in text.
+Findings for Fitts Law, Gestalt, and other spatial UX principles will include thumbnail annotations pulled from the actual design frames, showing the problem visually rather than describing it in text.
 
 **Throughline App**
 A Figma Make interface that wraps the full skill workflow. Designers fill in shot cards, run Throughline, and receive critique without touching the Agents panel. Includes drag-to-reorder shots, live Weave Brief preview, multi-prompt generation for all CONCEPT shots, and PDF export.
